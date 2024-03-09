@@ -37,7 +37,7 @@ if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
 
     # Query Stable Diffusion
-    headers = {"Authorization": f"Bearer {API_KEY}"}
+    headers = {"Authorization": f"Bearer {st.secrets.API_KEY}"}
     image_bytes = query_stabilitydiff({
         "inputs": prompt,
     }, headers)
