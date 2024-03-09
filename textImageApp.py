@@ -4,7 +4,6 @@ import io
 from PIL import Image
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-api_key = "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"
 
 def query_stabilitydiff(payload, headers):
     API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
@@ -38,7 +37,7 @@ if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
 
     # Query Stable Diffusion
-    headers = {"Authorization": f"Bearer {api_key}"}
+    headers = {"Authorization": f"Bearer {API_KEY}"}
     image_bytes = query_stabilitydiff({
         "inputs": prompt,
     }, headers)
